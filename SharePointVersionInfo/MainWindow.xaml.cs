@@ -84,16 +84,14 @@ namespace SharePointVersionInfo
                         string serviceCNFurl = formattedUrl + "/_vti_pvt/service.cnf";
                         try
                         {
+                            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(serviceCNFurl);
+                            myRequest.Method = "GET";
 
+                            myRequest.UserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)";
+                            myRequest.Accept = "text/html, application/xhtml+xml, */*";
 
-HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(serviceCNFurl);
-myRequest.Method = "GET";
-
-myRequest.UserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)";
-myRequest.Accept = "text/html, application/xhtml+xml, */*";
-
-WebResponse myResponse = null;
-string urlResult = "";
+                            WebResponse myResponse = null;
+                            string urlResult = "";
                             try
                             {
                                 myResponse = myRequest.GetResponse();
@@ -110,10 +108,8 @@ string urlResult = "";
                                 {
                                     if (response.StatusCode == HttpStatusCode.Unauthorized)
                                     {
-
                                         strAuthenticate = response.GetResponseHeader("WWW-Authenticate");
                                         strVersion = response.GetResponseHeader("MicrosoftSharePointTeamServices");
-
                                     }
                                     else
                                     {
@@ -124,7 +120,6 @@ string urlResult = "";
                                 else
                                 {
                                     txtResult.Text = string.Format("Response Received from server was null");
-
                                 }
                                 goto unauthorizederror;
                             }

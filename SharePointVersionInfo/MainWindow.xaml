@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:SharePointVersionInfo"
         mc:Ignorable="d"
          WindowStyle="None"
-        Title="SharePoint Version Info" ResizeMode="NoResize" Height="250" Width="450" BorderBrush="#FF0099FF" Background="WhiteSmoke" BorderThickness="1,0,1,1">
+        Title="SharePoint Version Info" ResizeMode="NoResize" Height="250" Width="450" BorderBrush="#FF0099FF" Background="WhiteSmoke" BorderThickness="1,0,1,1" 
+        Icon="sp86.ico"        
+        >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="26" />
@@ -19,13 +21,9 @@
             <Button x:Name="buttonClose" DockPanel.Dock="Right" Margin="4,0,4,3" VerticalAlignment="Bottom" Width="20" Height="20" Background="Transparent" Foreground="#fff" BorderBrush="#00707070" Click="buttonClose_Click"  >
                 <TextBlock Text="X" VerticalAlignment="Center"></TextBlock>
             </Button>
-            <!--<Button x:Name="buttonRestore" DockPanel.Dock="Right" Margin="1,0" VerticalAlignment="Center"  Width="20" Height="20" Background="Transparent" Foreground="#fff" BorderBrush="#00707070"  >
-                <TextBlock Text="M" VerticalAlignment="Center"></TextBlock>
-            </Button>
-            <Button x:Name="buttonMinimize" DockPanel.Dock="Right" Margin="1,0" VerticalAlignment="Center"  Width="20" Height="20" Background="Transparent" Foreground="#fff" BorderBrush="#00707070"  >
-                <TextBlock Text="__" VerticalAlignment="Center"></TextBlock>
-            </Button>-->
-            <TextBlock  DockPanel.Dock="Left" Margin="10,5,0,5" FontWeight="Bold" x:Name="labelAppTitle" Foreground="#fff" MouseDown="labelApplicationTitle_MouseDown">SharePoint Version Info</TextBlock>
+            <Image DockPanel.Dock="Left" Margin="2,5" Source="sp86.ico" />
+            <TextBlock  DockPanel.Dock="Left" Margin="2,5" FontWeight="Bold" x:Name="labelAppTitle" Foreground="#fff" MouseDown="labelApplicationTitle_MouseDown">SharePoint Version Info</TextBlock>
+            
         </DockPanel>
 
         <Grid Margin="5" Grid.Row="1" Grid.Column="0">
